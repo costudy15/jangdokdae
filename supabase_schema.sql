@@ -23,6 +23,7 @@ create table if not exists attempts (
   correct boolean not null,
   picked_term text,              -- 오답 시 고른 개념(혼동 분석용)
   hint_used boolean default false,
+  latency_ms int,                -- 풀이 시간(ms, 적응형 숙련도 계산용)
   created_at timestamptz default now()
 );
 create index if not exists attempts_student_idx on attempts(student_id);

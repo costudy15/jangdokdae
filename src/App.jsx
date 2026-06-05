@@ -40,6 +40,7 @@ export default function App() {
     await db.logAttempt({
       student_id: me.id, mode: rec.mode, term_id: rec.term_id, term_name: rec.term_name,
       correct: rec.correct, picked_term: rec.picked_term || null, hint_used: !!rec.hint_used,
+      latency_ms: rec.latency_ms ?? null,
     });
   }
 
